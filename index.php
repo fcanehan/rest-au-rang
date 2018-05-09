@@ -1,27 +1,24 @@
-<?php 
-/*
+<?php
+session_start();
+$_SESSION['pseudo'] =  'admin';
+$_SESSION['password'] = 'admin';
+//var_dump($_SESSION);
+ /*
 démarrage du TP barre de nav php -- restologue
 */
-?>
 
-  
-<?php 
 include 'template/header.php';
-?>
 
-<?php 
 include 'template/navigation.php';
-?>
 
-<?php
 include 'template/content.php';
-?>
 
-<?php
 include 'template/footer.php';
-?>
 
 
+//$_SESSION['pseudo'] = $_POST['prenom'];
+//$_SESSION['password'] = $_POST['password'];
+//$_SESSION['time']  = time();
 
 
 
