@@ -9,7 +9,6 @@
         <!--    <input type="text" name="password" placeholder="password" /><br/> -->
             <input type="submit" value="Envoie!" /> 
     </form>         
-    
     </div>
 <?php
     }else{

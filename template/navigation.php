@@ -1,13 +1,11 @@
-<br> 
- 
 <?php  
-
+session_start();
 // $contents est le chemin du repertoire contents     
     $contents = "/var/www/html/serveurweb/php-decouvertes.bwb/contents"; 
 // $dossier ouvre la liaison vers $contents     
     $dossier = opendir($contents); 
 ?>      
-      
+</br>      
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
    
  
@@ -35,11 +33,20 @@
                 }else{ 
 // si $entry est autre que accueil.php, traitement pour afficher le lien spécifié                      
                     ?>                         
-                    <li class="li_nav"><a href="/?page=<?=$entry?>"><?= $name?> </a></li> 
+                     <li class="li_nav"><a href="/?page=<?=$entry?>"><?= $name?> </a></li> 
                     <?php 
                 } 
             } 
         } 
+        if (isset($_SESSION['pseudo'])){
+            ?>
+            <li class="li_nav"><a href="/scripts/deco.php">deco</a></li>
+            <?php
+        }else{
+            ?>
+            <li class="li_nav"><a href="/scripts/connexion.php">connexion</a></li>
+            <?php
+        }
         ?> 
     </ul> 
   </div> 
