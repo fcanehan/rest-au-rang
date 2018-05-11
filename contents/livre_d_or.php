@@ -3,7 +3,7 @@ if (isset($_SESSION['pseudo'])) {
     ?>
 <div class="container">
     <h1>Bienvenue sur le livre d'OR</h1>
-    <form  method="POST" action="/datas/messages.json">
+    <form  method="POST" action="/scripts/add_message.php">
         Prenom : <input type="text" name="prenom"><br><br>
         Commentaire : <textarea name='message' rows="8" cols="45">Veuillez laisser votre commentaire</textarea><br><br>
         <input type="submit" value="Envoyer" class="btn btn-success">
@@ -20,16 +20,16 @@ else {
     exit;
 }
     
-$cheminMessages = "/datas/messages.json"; 
+$cheminMessages = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/messages.json"; 
 $listeMessage = file_get_contents($cheminMessages); 
 $listeMessageTableau = json_decode($listeMessage, TRUE); 
 if ($listeMessageTableau !== NULL ){ 
-    foreach($listeMessageTAbleau as $message){ 
+    foreach($listeMessageTableau as $message){ 
         ?> 
         <div class="container"> 
             <div class="liv_or"> 
-                <p>prenom<?=$listeMessageTableau['prenom']?>;</p> 
-                <p>message<?=$listeMessageTableau['message']?>;</p> 
+                <p>prenom : <?=$message['prenom']?>;</p> 
+                <p>message : <?=$message['message']?>;</p> 
             </div> 
         </div> 
         <?php 
