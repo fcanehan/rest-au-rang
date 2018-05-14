@@ -1,7 +1,11 @@
-<?php    
+<?php
+session_start();
+
+
+
 if (isset($_SESSION['pseudo'])) {
     ?>
-<div class="container">
+<div class="container msgOr">
     <h1>Bienvenue sur le livre d'OR</h1>
     <form  method="POST" action="/scripts/add_message.php">
         Prenom : <input type="text" name="prenom"><br><br>
@@ -16,24 +20,31 @@ if (isset($_SESSION['pseudo'])) {
     
 }
 else {
-    header('Location: http://php-decouvertes.bwb/scripts/connexion.php');
-    exit;
+    ?>
+<p> Pour écrire dans le livre d'or, veuillez vous <a href='../scripts/connexion.php'>connecter</a></p>
+<?php
 }
-    
-$cheminMessages = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/messages.json"; 
-$listeMessage = file_get_contents($cheminMessages); 
-$listeMessageTableau = json_decode($listeMessage, TRUE); 
-if ($listeMessageTableau !== NULL ){ 
-    foreach($listeMessageTableau as $message){ 
+
+
+   
+//$cheminMessages = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/messages.json"; 
+//$listeMessage = file_get_contents($cheminMessages); 
+//$listeMessageTableau = json_decode($listeMessage, TRUE); 
+//include ('../scripts/functions.php');
+show(); 
+
+//var_dump($listeMessageTableau);
+//if ($listeMessageTableau !== NULL ){ 
+//    foreach($listeMessageTableau as $message){ 
         ?> 
-        <div class="container"> 
+ <!--       <div class="container"> 
             <div class="liv_or"> 
-                <p>prenom : <?=$message['prenom']?>;</p> 
-                <p>message : <?=$message['message']?>;</p> 
+                <p>prenom : //<?=$message['prenom']?>;</p> 
+                <p>message : //<?=$message['message']?>;</p> 
             </div> 
-        </div> 
+        </div> -->
         <?php 
-    }
-}
+//    }
+//}
 
 

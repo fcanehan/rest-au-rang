@@ -10,13 +10,17 @@
 démarrage du TP barre de nav php -- restologue
 */
 
-include 'template/header.php';
 
-include 'template/navigation.php';
 
-include 'template/content.php';
+include './template/header.php';
+
+include './template/navigation.php';
+
+
+include './template/content.php';
+
 var_dump($_SESSION);
-include 'template/footer.php';
+include './template/footer.php';
 
 
 
