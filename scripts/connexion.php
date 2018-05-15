@@ -8,9 +8,9 @@
 ?>    
 
     <form method="POST" action="login.php"> 
-        <input type="text" name="pseudo" placeholder="pseudo" /><br/>
-    <!--    <input type="text" name="password" placeholder="password" /><br/> -->
-        <input type="submit" value="Envoie!" /> 
+        <input type="text" name="username" placeholder="pseudo" /><br/>
+        <input type="password" name="password" placeholder="password" /><br/> 
+        <input type="submit" value="Connexion!" /> 
     </form>         
     </div>
 <?php

@@ -20,7 +20,7 @@ $bool = false;
     foreach ($tableauUsers as $user){
 if($newuser['username'] === $user['username']){
     $bool = true;
-}
+    }
 }
 echo "bool:".$bool;
 if($bool){
@@ -36,15 +36,13 @@ function get_user($user,$password){
 $cheminUsers = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/users.json";
 $listeUsers = file_get_contents($cheminUsers);
 $tableauUsers = json_decode($listeUsers);
-$test = $_POST['username'];
-echo $user;
-echo $password;
-foreach ($tableauUsers as $user){
-if($user === $tableauUsers['username'] AND ($password === $tableauUsers['password'])){
-    echo "bongo";
-}else{
-    echo "you loose";
-}
+
+    foreach ($tableauUsers as $user){
+        if($user['username'] === $tableauUsers['username'] AND ($password['password'] === $tableauUsers['password'])){
+            header('Location: http://php-decouvertes.bwb');
+        }else{
+            echo "identification erronée";
+    }
 }
 
 //    if (($_POST["username"]=== $tableauUsers['username']) AND ($_POST['password'] === $tableauUsers['password'])){
