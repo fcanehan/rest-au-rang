@@ -1,39 +1,40 @@
 <?php
 
 function getNavbar() {
-
-
-    $contents = $_SERVER['DOCUMENT_ROOT']."/contents";
+  
+ $contents = $_SERVER['DOCUMENT_ROOT']."/contents";
     $dossier = opendir($contents);
-
-    echo "<nav class='navbar navbar-expand-lg navbar-light bg-light'> ";
-
-    echo " <div class='container' >";
-    echo"      <ul <!--class=' navi navi_bg '-->";
-
     while (($entry = readdir($dossier)) !== false) {
-        $name = basename($entry, ".php");
-        if ($entry !== "." && $entry !== "..") {
-            echo " <li class='li_nav'><a href='/?page=".$entry."'>".$name.'</a></li>';
-            
-        } else if ($entry == "accueil.php") {
+       // if (is_file($entry)){
+            $name = basename($entry, ".php");
+            if ($entry !== "." && $entry !== "..") {
+                echo " <li class='li_nav'><a href='/?page=".$entry."'>".$name.'</a></li>';
 
-            echo "<li class='li_nav'><a href='/'>".$name."</a></li> ";
-        } 
+            } else if ($entry == "accueil.php") {
+
+                echo "<li class='li_nav'><a href='/'>".$name."</a></li> ";
+            } 
+            }//else{
+                //getDropdown();
+//                $cartes = $contents . "/cartes";
+//                    $menus = opendir($cartes);
+//                    foreach ($menus as $menu){
+//            $name = basename($menu, ".php");
+//            if ($menu !== "." && $entry !== "..") {
+//                echo " <li class='li_nav'><a href='/?page=".$entry."'>".$name.'</a></li>';
+//            }
+
+            if (isset($_SESSION['pseudo'])) {
+
+                echo "<li class='li_nav'><a href='/scripts/deco.php'>deco</a></li>";
+            } else {
+
+                echo "<li class='li_nav'><a href='/scripts/connexion.php'>connexion</a></li>";
+            }
+
+    
     }
-
-    if (isset($_SESSION['pseudo'])) {
-
-        echo "<li class='li_nav'><a href='/scripts/deco.php'>deco</a></li>";
-    } else {
-
-        echo "<li class='li_nav'><a href='/scripts/connexion.php'>connexion</a></li>";
-    }
-
-    echo "</ul>";
-    echo" </div> ";
-    echo "</nav> ";
-}
+//}
 
 function getMessages() {
 //    $cheminMessages = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/messages.json" ; 

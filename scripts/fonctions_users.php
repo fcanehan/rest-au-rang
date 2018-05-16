@@ -33,24 +33,19 @@ if($bool){
 }
 
 function get_user($user,$password){
-$cheminUsers = "/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/users.json";
-$listeUsers = file_get_contents($cheminUsers);
-$tableauUsers = json_decode($listeUsers);
+$listeUsers = file_get_contents("/home/fabien/ServeurWeb/php-decouvertes.bwb/datas/users.json");
 
-    foreach ($tableauUsers as $user){
-        if($user['username'] === $tableauUsers['username'] AND ($password['password'] === $tableauUsers['password'])){
+$tableauUsers = json_decode($listeUsers,TRUE);
+
+    foreach ($tableauUsers as $users) {
+        
+        if($users['username'] === $_POST['username'] AND ($users['password'] === $_POST['password'])){
+            $_SESSION['pseudo'] = $_POST['username'];
             header('Location: http://php-decouvertes.bwb');
+            
         }else{
-            echo "identification erronée";
+            
+                
+        }
     }
-}
-
-//    if (($_POST["username"]=== $tableauUsers['username']) AND ($_POST['password'] === $tableauUsers['password'])){
-//    header('Location: http://php-decouvertes.bwb');
-//    
-//}else{
-//    echo "missed !";
-//    header('Location: http://php-decouvertes.bwb/registration.php');
-//    
-//}
 }
