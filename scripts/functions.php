@@ -24,7 +24,7 @@ function getNavbar() {
 //                echo " <li class='li_nav'><a href='/?page=".$entry."'>".$name.'</a></li>';
 //            }
 
-            if (isset($_SESSION['pseudo'])) {
+            if (isset($_COOKIE['username'])) {
 
                 echo "<li class='li_nav'><a href='/scripts/deco.php'>deco</a></li>";
             } else {

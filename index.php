@@ -1,4 +1,6 @@
-<?php session_start();
+<?php 
+
+    setcookie("username", 0, time()+60);
 //$_SESSION['pseudo'] =  'admin';
 //$_SESSION['password'] = 'admin';
 //$_SESSION['pseudo'] = $_POST['pseudo'];

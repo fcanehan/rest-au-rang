@@ -1,10 +1,12 @@
+
+
 <link href="connexion.css" rel="stylesheet" type="text/css"/>
 <div class="container connex">
     <p>Veuillez vous connecter</p>
     <?php
 
 
-    if (!isset($_SESSION['pseudo'])){
+    if (!isset($_COOKIE['username'])){
 ?>    
 
     <form method="POST" action="login.php"> 
@@ -15,6 +17,6 @@
     </div>
 <?php
     }else{
-    echo "blablabla";
+        //header('location: http://php-decouvertes.bwb');
     }
 
