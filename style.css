@@ -1,0 +1,34 @@
+body{
+    ;
+}
+.li_nav{
+    margin:0px 10px;
+    
+}
+
+.navi{
+    height : 100px; 
+    font-family: 'Titan One', cursive;
+    
+}
+
+.navi_bg{
+    color:  green;
+    background-image: url(images/nav.png);
+    background-repeat: no-repeat;
+    background-position:  right;
+    height: 214px;
+    list-style-type: none;
+   
+}
+li{
+    float: left;
+    align-content:  space-between;
+}
+ul{
+    list-style-type: none;
+}
+
+.msgOr{
+    text-align: center;
+}   
