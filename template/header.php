@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
     </head>
     <body>
-        <div class="top">
+        <div class="container-fluid top">
+            <div class="col-md-4">
+                <p>Rest-au-Rang</p>
+            </div>
             
         </div>

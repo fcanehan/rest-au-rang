@@ -1,4 +1,4 @@
-<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+<nav class=" navi navbar navbar-inverse">
     <div class='container' >
         <ul> <!--class=' navi navi_bg '-->
 <?php 

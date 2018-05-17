@@ -21,7 +21,7 @@ include './template/navigation.php';
 
 include './template/content.php';
 
-var_dump($_SESSION);
+
 include './template/footer.php';
 
 

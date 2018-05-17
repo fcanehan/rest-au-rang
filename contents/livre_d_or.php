@@ -21,7 +21,7 @@ if (isset($_SESSION['pseudo'])) {
 }
 else {
     ?>
-<p> Pour écrire dans le livre d'or, veuillez vous <a href='../scripts/connexion.php'>connecter</a></p>
+<h3> Pour écrire dans le livre d'or, veuillez vous <a href='../scripts/connexion.php'>connecter</a></h3>
 <?php
 }
 

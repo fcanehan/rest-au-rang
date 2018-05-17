@@ -1,8 +1,8 @@
 <br>
 
-<?php
-
-
-?>
+        <footer>
+            
+            
+        </footer>
     </body>
 </html>

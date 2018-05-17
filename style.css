@@ -7,23 +7,16 @@ body{
 }
 
 .navi{
-    height : 100px; 
+    
     font-family: 'Titan One', cursive;
     
 }
 
-.navi_bg{
-    color:  green;
-    background-image: url(images/nav.png);
-    background-repeat: no-repeat;
-    background-position:  right;
-    height: 214px;
-    list-style-type: none;
-   
-}
+
 li{
     float: left;
     align-content:  space-between;
+    color: black;
 }
 ul{
     list-style-type: none;
@@ -32,3 +25,26 @@ ul{
 .msgOr{
     text-align: center;
 }   
+
+.top, footer{
+    background-color: black;
+    height: 200px;
+    font-family: 'Titan One', cursive;
+    color: white;
+    padding-left : 100px ;
+    font-style:  italic !important;
+    font-size: 3em;
+    padding-top: 50px;
+} 
+
+.liv_or{
+    border: 2px black ridge;
+    min-height: 150px;
+    min-width: 400px;
+    
+    margin : 10px 0 10px 0;
+}
+
+h3{
+    text-align: center;
+}
